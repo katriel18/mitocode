@@ -4,6 +4,13 @@ public class Celular {
     String nombre;
     String color;
 
+    public Celular() {
+        System.out.println("Soy un constructor vacio.");
+    }
+    public Celular(String nombre) {
+        this.nombre = nombre;
+    }
+
     public Celular(String nombre, String color) {
         this.nombre = nombre;
         this.color = color;

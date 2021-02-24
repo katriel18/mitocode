@@ -1,33 +1,17 @@
 package CursoSE.src.cursose;
 
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
-        // alt+62 >
-        // alt+60 <
-        /*
-         * = == != > <´>= <=
-         */
+        Scanner input =new Scanner(System.in);
 
-        int x = 30;
+        String nombre=input.nextLine();
+        int edad=input.nextInt();
 
-        if (x > 50) {
-            System.out.println("Sentencia if");
-        } else {
-            System.out.println("Sentecia else");
-        }
-
-        if (x == 50) {
-            System.out.println("Sentencia 50");
-        } else if (x == 40) {
-            System.out.println("Sentecia 40");
-        } else if (x == 30) {
-            System.out.println("Sentecia 30");
-        } else {
-            System.out.println("Sentecia null");
-        }
-
-        String mayor = (x > 200) ? "mayor" : "menor";
-        System.out.println(mayor);
+        System.out.println("Hola "+nombre);
+        System.out.println("Edad: "+edad);
+        
     }
 }

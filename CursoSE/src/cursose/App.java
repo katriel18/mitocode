@@ -21,7 +21,11 @@ public class App {
 
         for (int i = 0; i < cant; i++) {
             for (int j = 0; j < cant; j++) {
-                System.out.print(numeros[i][j]+"\t");
+                    if(i==j){
+                        System.out.print(numeros[i][j]);
+                    }else{
+                        System.out.print(0);
+                    }
             }
             System.out.println();
         }

@@ -1,26 +1,18 @@
 package CursoSE.src.cursose;
 
-import java.util.Scanner;
-
 public class App {
+
+    private String nombre;
+
+    public void saludar(){
+        nombre="Katriel";
+        System.out.println("Hola "+nombre);
+    }
+
     public static void main(String[] args) throws Exception {
 
-        Scanner sc = new Scanner(System.in);
-
-        String resultado = sc.next();
-
-        switch (resultado) {
-            case "Osti":
-                System.out.println("Hola Osti");
-                break;
-            case "Katriel":
-                System.out.println("Hola Katriel");
-                break;
-            default:
-                System.out.println("No encontrado");
-                break;
-        }
-        System.out.println("Fin del Switch");
-
+        App a=new App();
+        a.saludar();
+    
     }
 }

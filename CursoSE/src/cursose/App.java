@@ -4,23 +4,37 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-
-        System.out.println("Inrese tamaño del vector:");
-
+        int cant = 5;
         Scanner sc = new Scanner(System.in);
-        int tamano = sc.nextInt();
-        String[] vector = new String[tamano];
 
-        for (int i = 0; i < vector.length; i++) {
-            System.out.println("Ingrese valor " + i + ":");
-            vector[i] = sc.next();
+        // String[] nombres= new String[cant];
+        int[] edades = new int[cant];
+
+        for (int i = 0; i < cant; i++) {
+            // System.out.println("Ingrese nombre " + i + ":");
+            // nombres[i] = sc.next();
+            System.out.println("Ingrese edad " + i + ":");
+            edades[i] = sc.nextInt();
         }
 
         System.out.println("--------------------------");
 
-        for (String cadena : vector) {
-            System.out.println(cadena);
+        int aux;
+
+        for (int i = 0; i < cant - 1; i++) {
+            for (int j = 0; j < (cant - 1) - i; j++) {
+                if (edades[j] > edades[j + 1]) {
+                    aux = edades[j];
+                    edades[j] = edades[j + 1];
+                    edades[j + 1] = aux;
+                }
+
+            }
         }
-        
+
+        for (Integer e : edades) {
+            System.out.println(e);
+        }
+
     }
 }

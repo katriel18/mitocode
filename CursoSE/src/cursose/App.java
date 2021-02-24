@@ -3,21 +3,21 @@ package CursoSE.src.cursose;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Number x = new Integer("9");
-        System.out.println(x);
-        Number y = new Integer(9);
-        System.out.println(y);
+        //caracteres
+        char caracter='A';
+        System.out.println(caracter);
 
-        int x1=18;
-        System.out.println(x1);
-        Integer y2=18;
-        System.out.println(y2);
+        Character caracter2='B';
+        System.out.println(caracter2);
 
-        //int x3=null; //no valido
-        Integer y3=null; //valido - Base de datos
+        Character caracter3=new Character('C');//deprecated
+        System.out.println(caracter3);
 
-        String texto="99";
-        int suma=Integer.parseInt(texto)+1;
-        System.out.println(suma);
+        //secuencias de escapes
+        System.out.println("Hola\nMundo");
+        System.out.println("Hola \"Mundo\"");
+        System.out.println("Hola \tMundo\"");
+        System.out.println("Hola \\Mundo\"");
+
     }
 }

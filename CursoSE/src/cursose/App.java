@@ -3,36 +3,31 @@ package CursoSE.src.cursose;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        String texto="Hola Katriel";
+        // alt+62 >
+        // alt+60 <
+        /*
+         * = == != > <´>= <=
+         */
 
-        char caracter=texto.charAt(0);
-        System.out.println(caracter);
+        int x = 30;
 
-        int negativo1=texto.compareTo("Hola Osti");
-        System.out.println(negativo1);
+        if (x > 50) {
+            System.out.println("Sentencia if");
+        } else {
+            System.out.println("Sentecia else");
+        }
 
-        int negativo2=texto.compareTo("hola katriel");
-        System.out.println(negativo2);
+        if (x == 50) {
+            System.out.println("Sentencia 50");
+        } else if (x == 40) {
+            System.out.println("Sentecia 40");
+        } else if (x == 30) {
+            System.out.println("Sentecia 30");
+        } else {
+            System.out.println("Sentecia null");
+        }
 
-        int positivo1=texto.compareTo("Hola Katriel");
-        System.out.println(positivo1);
-
-        String resultado=texto.concat("...");
-        System.out.println(resultado);
-
-        boolean resultado3=texto.contains("o");
-        System.out.println(resultado3);
-
-        int pos=texto.indexOf("i");
-        System.out.println(pos);
-        int pos2=texto.indexOf("a");
-        System.out.println(pos2);
-
-        String parte=texto.substring(5);
-        System.out.println(parte);    
-    
-        int cant=texto.length();
-        System.out.println(cant); 
-    
+        String mayor = (x > 200) ? "mayor" : "menor";
+        System.out.println(mayor);
     }
 }

@@ -2,22 +2,12 @@ package CursoSE.src.cursose;
 
 public class App {
 
-    private String nombre="Maria";
-
-    public void saludar1(){
-        String nombre="Jose";
-        System.out.println("Hola "+nombre);
-    }
-    public void saludar2(){
-        System.out.println("Hola "+nombre);
-    }
-
     public static void main(String[] args) throws Exception {
 
-        App a=new App();
+        Celular c1=new Celular("LG", "verde");
+        Celular c2=new Celular("SAMSUNG", "negro");
         
-        a.saludar1();
-        a.saludar2();
+        c2.llamadaEspecial(c1);
     
     }
 }

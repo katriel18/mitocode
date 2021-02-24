@@ -1,25 +1,23 @@
 package CursoSE.src.cursose;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
-        
-        int var1;
-        var1=1;
-        System.out.println(var1);
-      /*var1=null;  //no puede convertir
-        System.out.println(var1);*/
 
-        Integer var2;
-        var2=2;
-        System.out.println(var1);
-        var2=null;
-        System.out.println(var2);
+        Number x = new Integer("9");
+        System.out.println(x);
+        Number y = new Integer(9);
+        System.out.println(y);
 
-        double var3;
-        var3=3.3;
-        System.out.println(var3);
-        
-        String cadena="Hola Mundo";
-        System.out.println(cadena);
+        int x1=18;
+        System.out.println(x1);
+        Integer y2=18;
+        System.out.println(y2);
+
+        //int x3=null; //no valido
+        Integer y3=null; //valido - Base de datos
+
+        String texto="99";
+        int suma=Integer.parseInt(texto)+1;
+        System.out.println(suma);
     }
 }

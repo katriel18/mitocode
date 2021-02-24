@@ -3,21 +3,36 @@ package CursoSE.src.cursose;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        //caracteres
-        char caracter='A';
+        String texto="Hola Katriel";
+
+        char caracter=texto.charAt(0);
         System.out.println(caracter);
 
-        Character caracter2='B';
-        System.out.println(caracter2);
+        int negativo1=texto.compareTo("Hola Osti");
+        System.out.println(negativo1);
 
-        Character caracter3=new Character('C');//deprecated
-        System.out.println(caracter3);
+        int negativo2=texto.compareTo("hola katriel");
+        System.out.println(negativo2);
 
-        //secuencias de escapes
-        System.out.println("Hola\nMundo");
-        System.out.println("Hola \"Mundo\"");
-        System.out.println("Hola \tMundo\"");
-        System.out.println("Hola \\Mundo\"");
+        int positivo1=texto.compareTo("Hola Katriel");
+        System.out.println(positivo1);
 
+        String resultado=texto.concat("...");
+        System.out.println(resultado);
+
+        boolean resultado3=texto.contains("o");
+        System.out.println(resultado3);
+
+        int pos=texto.indexOf("i");
+        System.out.println(pos);
+        int pos2=texto.indexOf("a");
+        System.out.println(pos2);
+
+        String parte=texto.substring(5);
+        System.out.println(parte);    
+    
+        int cant=texto.length();
+        System.out.println(cant); 
+    
     }
 }

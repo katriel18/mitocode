@@ -5,13 +5,16 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
 
-        Scanner input =new Scanner(System.in);
+        String nombre = "";
+        Scanner input = new Scanner(System.in);
 
-        String nombre=input.nextLine();
-        int edad=input.nextInt();
+        nombre = input.nextLine();
+        while (!nombre.equals("Osti")) {//respeta mayus y minus
+            System.out.println("No eres Osti");
+            nombre = input.nextLine();
+        }
 
-        System.out.println("Hola "+nombre);
-        System.out.println("Edad: "+edad);
-        
+        System.out.println("Hola " + nombre);
+
     }
 }

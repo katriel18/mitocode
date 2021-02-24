@@ -1,20 +1,36 @@
 package CursoSE.src.cursose;
 
-import java.util.Scanner;
-
 public class App {
     public static void main(String[] args) throws Exception {
 
-        String nombre = "";
-        Scanner input = new Scanner(System.in);
-
-        nombre = input.nextLine();
-        while (!nombre.equals("Osti")) {//respeta mayus y minus
-            System.out.println("No eres Osti");
-            nombre = input.nextLine();
+        for(int i=0;i<10;i=i+2){
+            System.out.println(i);
+        }
+        System.out.println("//////////////////");
+        for(int i=0;i<5;i++){
+            if (i==2) {
+                break;
+            }
+            System.out.println(i);
+        }
+        System.out.println("//////////////////");
+        for(int i=0;i<5;i++){
+            if (i==2) {
+                continue;
+            }
+            System.out.println(i);
+        }
+        System.out.println("//////////////////");
+        String[] array={"FACEBOOK","YOUTUBE","TWITER"};
+        for(int i=0;i<array.length;i++){
+            System.out.println(array[i]);
         }
 
-        System.out.println("Hola " + nombre);
+        System.out.println("//////////////////");
+        String[] array2={"FACEBOOK","YOUTUBE","TWITER"};
+        for(String s:array2){
+            System.out.println(s);
+        }
 
     }
 }

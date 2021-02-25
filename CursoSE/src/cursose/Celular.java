@@ -1,8 +1,11 @@
 package CursoSE.src.cursose;
 
 public class Celular {
-    String nombre;
-    String color;
+
+    public String nombre;
+    private String color;
+    protected String serie;
+    String fecha;
 
     public Celular() {
         System.out.println("Soy un constructor vacio.");

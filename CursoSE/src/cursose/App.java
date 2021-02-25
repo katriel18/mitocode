@@ -4,9 +4,13 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        Celular c1=new Celular();
+        //Animal a=new Animal();
+        
+        Perro p1=new Perro();
+        p1.setEdad(15);
+        p1.mostrar();
 
-        c1.setNombre("LG");
-        System.out.println(c1.mostrar());
+        Perro p2=new Perro("Michi","galleta",15,"felino");
+        p2.mostrar();
     }
 }

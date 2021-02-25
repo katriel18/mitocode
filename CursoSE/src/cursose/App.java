@@ -1,37 +1,59 @@
 package CursoSE.src.cursose;
+
 public class App {
 
-    private void proceso1(){
-        int a=7,b=0;
-        int division=a/b;
-        System.out.println(division);
+    private void proceso1() {
+
+        try {
+
+            proceso2();
+
+        } catch (Exception e) {
+
+            System.out.println("Capturado en el proceso 1: " + e.getMessage());
+
+        }
+
+    }
+
+    private void proceso2() throws Exception {
+
+        try {
+
+            proceso3();
+
+        } catch (Exception e) {
+
+            // System.out.println("Capturado en el proceso 2: "+e.getMessage());
+
+            throw new Exception("Exepcion enviada desde el  proceso 2");//Lanzar un mensaje de la excepcion(Exception).
+            //throw new Exception(e.getMessage());//Lanzar el mensaje de la excepcion(ArithmeticException) capturada.
+
+        }
+
+    }
+
+    private void proceso3() {
+
+        try {
+
+            int division = 1 / 0;
+
+        } catch (Exception e) {
+
+            // System.out.println("Capturado en el proceso 3: "+e.getMessage());
+
+            throw e; // lanzando la excepcion
+
+        }
+
     }
 
     public static void main(String[] args) {
 
-        App a=null;
+        App a = new App();
 
-        try{
-
-            //proceso 1
-            a.proceso1();
-
-        }catch(NullPointerException ex){ //excepcion mas especifica
-
-            //manejo de la excepcion
-            System.out.println("Excepcion especifica: "+ex.getMessage());
-
-        }catch(Exception ex){   //excepcion mas general
-
-            //Captura mas excepciones
-            System.out.println("Excepcion general no especifica!");
-
-        }finally{   //opcional
-
-            //se ejecuta si o si
-            System.out.println("Bloque finally ejecutada!");
-
-        }
+        a.proceso1();
 
     }
 }

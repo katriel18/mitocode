@@ -2,29 +2,45 @@ package CursoSE.src.cursose;
 
 public class Celular {
 
-    public String nombre;
+    private String nombre;
     private String color;
-    protected String serie;
-    String fecha;
+    private String serie;
 
-    public Celular() {
-        System.out.println("Soy un constructor vacio.");
+    public String getNombre() {
+        if (nombre == null) {
+            nombre = "SIN NOMBRE";
+        }
+        return nombre;
     }
-    public Celular(String nombre) {
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public Celular(String nombre, String color) {
-        this.nombre = nombre;
+    public String getColor() {
+        if (color == null) {
+            color = "SIN COLOR";
+        }
+        return color;
+    }
+
+    public void setColor(String color) {
         this.color = color;
     }
-    
-    public void llamar(){
-        System.out.println(nombre+"-"+color+" esta llamando...");
+
+    public String getSerie() {
+        if (serie == null) {
+            serie = "SIN SERIE";
+        }
+        return serie;
     }
 
-    public void llamadaEspecial(Celular c){
-        System.out.println(c.nombre+"-"+c.color+" esta llamando...");
+    public void setSerie(String serie) {
+        this.serie = serie;
     }
-    
+
+    public String mostrar() {
+        return "Celular [nombre=" +getNombre()+ ", color=" + getColor()+ ", serie=" + getSerie() + "]";
+    }
+
 }

@@ -4,22 +4,14 @@ public class App {
 
     public static void main(String[] args) {
 
-        Animal a = new Perro();
-        a.alimentacion();
+        Persona p=new Persona();
 
-        a = new Gato();
-        a.alimentacion();
+        p.setNombre("katriel");
+        p.setEdad(22);
 
-        a = new Caballo();
-        a.alimentacion();
+        p.mostrarInstancia();//metodo del objeto
 
-        a.moverse();
-
-        //encapsulamient de los datos del metodo split
-        String[] vector="Hola, juan ,Jhon".split(",");
-        for (String s : vector) {
-            System.out.println(s);
-        }
+        Persona.mostrarClase();//metodo de la clase
 
     }
 }

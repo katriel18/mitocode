@@ -15,5 +15,11 @@ public class App {
 
         a.moverse();
 
+        //encapsulamient de los datos del metodo split
+        String[] vector="Hola, juan ,Jhon".split(",");
+        for (String s : vector) {
+            System.out.println(s);
+        }
+
     }
 }

@@ -16,16 +16,21 @@ public class App {
             //proceso 1
             a.proceso1();
 
-        }catch(Exception ex){
+        }catch(ArithmeticException ex){ //excepcion mas especifica
 
             //manejo de la excepcion
-            System.out.println("Excepcion: "+ex.getMessage());
+            System.out.println("Excepcion especifica: "+ex.getMessage());
+
+        }catch(Exception ex){   //excepcion mas general
+
+            //Captura mas excepciones
+            System.out.println("Excepcion general no especifica!");
 
         }finally{   //opcional
 
             //se ejecuta si o si
             System.out.println("Bloque finally ejecutada!");
-            
+
         }
 
     }

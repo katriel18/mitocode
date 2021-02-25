@@ -1,40 +1,31 @@
 package CursoSE.src.cursose;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 public class App {
+
+    private void proceso1(){
+        int a=7,b=0;
+        int division=a/b;
+        System.out.println(division);
+    }
 
     public static void main(String[] args) {
 
-        Set<Integer> conjunto =new HashSet<>();//numeros si ordena bien
+        App a=new App();
 
-        conjunto.add(4);
-        conjunto.add(4);
-        conjunto.add(5);
-        conjunto.add(6);
-        conjunto.add(7);
-        conjunto.add(7);
+        try{
 
-        for (Integer c : conjunto) {
-           System.out.println(c);
-        }
-        System.out.println("-----------------------");
-        Set<String> conjunto2 =new HashSet<>();//numeros en texto si ordena bien
-        conjunto2.add("4");
-        conjunto2.add("4");
-        conjunto2.add("Zorro");
-        conjunto2.add("Alan");
-        conjunto2.add("Jhon");
-        conjunto2.add("Jhon");
+            //proceso 1
+            a.proceso1();
 
-        for (String c : conjunto2) {
-           System.out.println(c);
+        }catch(Exception ex){
+
+            //manejo de la excepcion
+            System.out.println("Excepcion: "+ex.getMessage());
+
+        }finally{   //opcional
+
+            //se ejecuta si o si
+            System.out.println("Bloque finally ejecutada!");
+            
         }
 
     }

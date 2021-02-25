@@ -49,11 +49,28 @@ public class App {
 
     }
 
+    public void lanzadorDeExcepcionAritmetica() {//no obliga a capturarla(excepcion de ejecucion)
+        throw new ArithmeticException("Division entre 0");
+    }
+
+    public void lanzadorDeExcepcion() throws Exception {//obliga a capturrarla(excepcion de compilacion)
+        throw new Exception("Excepcion general");
+    }
+
     public static void main(String[] args) {
 
         App a = new App();
 
         a.proceso1();
+
+
+        System.out.println("Pruebas de lanzadores:");
+
+        a.lanzadorDeExcepcionAritmetica();//capturarla en un  try catch para que ejecute sin excepciones
+
+        a.lanzadorDeExcepcion();//capturarla en un  try catch para que compile el codigo
+
+        
 
     }
 }

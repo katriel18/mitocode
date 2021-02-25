@@ -9,14 +9,14 @@ public class App {
 
     public static void main(String[] args) {
 
-        App a=new App();
+        App a=null;
 
         try{
 
             //proceso 1
             a.proceso1();
 
-        }catch(ArithmeticException ex){ //excepcion mas especifica
+        }catch(NullPointerException ex){ //excepcion mas especifica
 
             //manejo de la excepcion
             System.out.println("Excepcion especifica: "+ex.getMessage());

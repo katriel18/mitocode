@@ -6,6 +6,21 @@ public class Banco {
     private Persona per2;
     private Persona per3;
 
+    public Banco() {
+        per1 = new Persona();
+        per1.setCuenta(1);
+        per1.setNombre("Luis");
+        per1.setMonto(500);
+        per2 = new Persona();
+        per2.setCuenta(2);
+        per2.setNombre("Pedro");
+        per2.setMonto(1000);
+        per3 = new Persona();
+        per3.setCuenta(3);
+        per3.setNombre("Jesus");
+        per3.setMonto(250);
+    }
+
     public Persona getPer1() {
         return per1;
     }
@@ -29,5 +44,5 @@ public class Banco {
     public void setPer3(Persona per3) {
         this.per3 = per3;
     }
-    
+
 }

@@ -25,5 +25,10 @@ public class Perro extends Animal{
         System.out.println(getNombre()+" "+getTipo_alimentacion()+" "+
         getEdad()+" "+getRaza());
     }
+
+    @Override
+    public void alimentacion() {
+       System.out.println("Yo me alimento de carne!");
+    }
  
 }

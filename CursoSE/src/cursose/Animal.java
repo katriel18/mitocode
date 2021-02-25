@@ -1,20 +1,20 @@
 package CursoSE.src.cursose;
 
-public class Animal {
+public abstract class Animal {
     
     private String nombre;
     private String tipo_alimentacion;
     private int edad;
 
+    public Animal() {
+    }
+    
     public Animal(String nombre, String tipo_alimentacion, int edad) {
         this.nombre = nombre;
         this.tipo_alimentacion = tipo_alimentacion;
         this.edad = edad;
     }
 
-    public Animal() {
-    }
-    
     public String getNombre() {
         return nombre;
     }
@@ -39,4 +39,9 @@ public class Animal {
         this.edad = edad;
     }
 
+    public abstract void alimentacion();
+    
+    public void moverse(){
+        System.out.println("El animal se esta moviendo!");
+    }
 }

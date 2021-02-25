@@ -2,15 +2,18 @@ package CursoSE.src.cursose;
 
 public class App {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 
-        //Animal a=new Animal();
-        
-        Perro p1=new Perro();
-        p1.setEdad(15);
-        p1.mostrar();
+        Animal a = new Perro();
+        a.alimentacion();
 
-        Perro p2=new Perro("Michi","galleta",15,"felino");
-        p2.mostrar();
+        a = new Gato();
+        a.alimentacion();
+
+        a = new Caballo();
+        a.alimentacion();
+
+        a.moverse();
+
     }
 }

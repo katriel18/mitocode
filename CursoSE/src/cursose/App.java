@@ -1,76 +1,28 @@
 package CursoSE.src.cursose;
 
+import java.util.Scanner;
+
 public class App {
-
-    private void proceso1() {
-
-        try {
-
-            proceso2();
-
-        } catch (Exception e) {
-
-            System.out.println("Capturado en el proceso 1: " + e.getMessage());
-
-        }
-
-    }
-
-    private void proceso2() throws Exception {
-
-        try {
-
-            proceso3();
-
-        } catch (Exception e) {
-
-            // System.out.println("Capturado en el proceso 2: "+e.getMessage());
-
-            throw new Exception("Exepcion enviada desde el  proceso 2");//Lanzar un mensaje de la excepcion(Exception).
-            //throw new Exception(e.getMessage());//Lanzar el mensaje de la excepcion(ArithmeticException) capturada.
-
-        }
-
-    }
-
-    private void proceso3() {
-
-        try {
-
-            int division = 1 / 0;
-
-        } catch (Exception e) {
-
-            // System.out.println("Capturado en el proceso 3: "+e.getMessage());
-
-            throw e; // lanzando la excepcion
-
-        }
-
-    }
-
-    public void lanzadorDeExcepcionAritmetica() {//no obliga a capturarla(excepcion de ejecucion)
-        throw new ArithmeticException("Division entre 0");
-    }
-
-    public void lanzadorDeExcepcion() throws Exception {//obliga a capturrarla(excepcion de compilacion)
-        throw new Exception("Excepcion general");
-    }
 
     public static void main(String[] args) {
 
-        App a = new App();
+        final int EDAD_MAXIMA = 100;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese su edad: ");
 
-        a.proceso1();
+        int edad = sc.nextInt();
 
+        if (edad < EDAD_MAXIMA) {
+            System.out.println("Bienvenido");
+        } else {
+            try {
+                throw new ExcepcionPersonalizada("Edad no permitida");
+            } catch (ExcepcionPersonalizada e) {
+               // e.printStackTrace();
+                System.out.println(e.getMessage());
+            }
+        }
 
-        System.out.println("Pruebas de lanzadores:");
-
-        a.lanzadorDeExcepcionAritmetica();//capturarla en un  try catch para que ejecute sin excepciones
-
-        a.lanzadorDeExcepcion();//capturarla en un  try catch para que compile el codigo
-
-        
 
     }
 }

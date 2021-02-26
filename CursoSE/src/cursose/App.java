@@ -9,15 +9,12 @@ public class App {
 
     public static void main(String[] args) {
 
-        // coneccion a una base de datos externa(problemas con la bas de datos local)
-
         // JDBC driver y base de datos URL
         // final String JDBC_DRIVER = "org.postgresql.Driver";// com.mysql.jdbc.Driver
-        // //para web
-        final String DB_URL = "jdbc:postgresql://ec2-54-198-73-79.compute-1.amazonaws.com:5432/d41gjcspnpn2nc";// jdbc:mysql://localhost/mitocode
+        final String DB_URL = "jdbc:postgresql://localhost:5432/mitocode";// jdbc:mysql://localhost/mitocode
         // credenciales
-        final String USER = "lhthnfargkuqik";
-        final String PASS = "7a336cd022dfeea622efb3298049c00377fa236f6085a6d4915d4315dcbb0bdd";
+        final String USER = "postgres";
+        final String PASS = "postgres";
 
         Connection conexion = null;
 
@@ -25,7 +22,8 @@ public class App {
             // Class.forName(JDBC_DRIVER);
             conexion = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("BD conectada!");
-            PreparedStatement st = conexion.prepareStatement("INSERT INTO usuarios(nombre,email,prioridad)  VALUES ('katriel','katriel@gmail.com',5)");
+           //PreparedStatement st = conexion.prepareStatement("INSERT INTO persona (nombre) VALUES ('maria')");
+            PreparedStatement st = conexion.prepareStatement("INSERT INTO usuario VALUES ('')");
             st.executeUpdate();
             st.close();
             /*

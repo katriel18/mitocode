@@ -12,6 +12,34 @@ public class App {
         return nombre;
         
     }
+    public void listar() {
+
+        final String DB_URL = "jdbc:postgresql://localhost:5432/mitocode";
+
+        final String USER = "postgres";
+        final String PASS = "postgres";
+
+        // finally de manera implicita - cierra recursos de manera automatica
+        try (Connection conexion = DriverManager.getConnection(DB_URL, USER, PASS);) {
+
+            System.out.println("BD conectada!");
+            PreparedStatement st = conexion.prepareStatement("SELECT * FROM persona");
+           
+            ResultSet rs= st.executeQuery();
+            while (rs.next()) {
+                System.out.println(rs.getInt("id")+" "+rs.getString("nombre"));
+            }
+
+            rs.close();
+            st.close();
+
+        } catch (SQLException e) {
+
+            System.out.println("Exepcion 1 ejecutada: " + e.getMessage());
+
+        }
+
+    }
 
     public void registrar(String valor) {
 
@@ -41,11 +69,7 @@ public class App {
 
         App a=new App();
 
-        String valor=a.solicitarValores(); 
-
-        if (valor!=null) {
-            a.registrar(valor);
-        }
+        a.listar();
         
     }
 

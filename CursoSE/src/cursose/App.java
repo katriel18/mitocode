@@ -1,9 +1,6 @@
 package CursoSE.src.cursose;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class App {
 
@@ -14,11 +11,9 @@ public class App {
         final String USER = "postgres";
         final String PASS = "postgres";
 
-        Connection conexion = null;
+        // finally de manera implicita - cierra recursos de manera automatica
+        try (Connection conexion = DriverManager.getConnection(DB_URL, USER, PASS);) {
 
-        try {
-
-            conexion = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("BD conectada!");
             PreparedStatement st = conexion.prepareStatement("INSERT INTO persona(nombre) VALUES ('Juan')");
             st.executeUpdate();
@@ -28,22 +23,8 @@ public class App {
 
             System.out.println("Exepcion 1 ejecutada: " + e.getMessage());
 
-        } finally {
-
-            if (conexion != null) {
-                try {
-
-                    if (!conexion.isClosed())
-                        conexion.close();
-
-                } catch (SQLException e) {
-
-                    System.out.println("Exepcion 2 ejecutada: " + e.getMessage());
-
-                }
-            }
-
         }
 
     }
+
 }

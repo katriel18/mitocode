@@ -1,10 +1,19 @@
 package CursoSE.src.cursose;
 
 import java.sql.*;
+import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) {
+    public String solicitarValores() {
+
+        Scanner sc=new Scanner(System.in);
+        String nombre =sc.next();
+        return nombre;
+        
+    }
+
+    public void registrar(String valor) {
 
         final String DB_URL = "jdbc:postgresql://localhost:5432/mitocode";
 
@@ -15,7 +24,8 @@ public class App {
         try (Connection conexion = DriverManager.getConnection(DB_URL, USER, PASS);) {
 
             System.out.println("BD conectada!");
-            PreparedStatement st = conexion.prepareStatement("INSERT INTO persona(nombre) VALUES ('Juan')");
+            PreparedStatement st = conexion.prepareStatement("INSERT INTO persona(nombre) VALUES (?)");
+            st.setString(1, valor);
             st.executeUpdate();
             st.close();
 
@@ -25,6 +35,18 @@ public class App {
 
         }
 
+    }
+
+    public static void main(String[] args) {
+
+        App a=new App();
+
+        String valor=a.solicitarValores(); 
+
+        if (valor!=null) {
+            a.registrar(valor);
+        }
+        
     }
 
 }

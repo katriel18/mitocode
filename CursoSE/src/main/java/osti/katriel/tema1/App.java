@@ -6,7 +6,6 @@ package osti.katriel.tema1;
 
 public class App {
     public static void main(String[] args) {
-        Alumno a1 = new Alumno();
-        System.out.println(a1.sumar(2));
+        System.out.println(Alumno.sumar(3));
     }
 }

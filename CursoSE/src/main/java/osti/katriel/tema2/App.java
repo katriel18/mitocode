@@ -2,12 +2,16 @@ package osti.katriel.tema2;
 
 public class App {
     public static void main(String[] args) {
-        String texto="Texto";
-        Integer n1=10;
-        if(texto instanceof String){
-            System.out.println("Es un String");
+        Alumno a=new Alumno();
+        
+        if(a instanceof Alumno){
+            System.out.println("Es una Alumno");
+        }else if(a instanceof Persona){
+            System.out.println("Es una Persona");
         }
-        System.out.println("texto".getClass());
-        System.out.println(n1.getClass());
+        
+
+        
+        
     }
 }

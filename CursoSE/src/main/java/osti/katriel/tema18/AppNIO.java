@@ -45,15 +45,24 @@ public class AppNIO {
 
     }
 
-    public void leer() {
-        
+    public void leer() throws IOException {
+        Path path=Paths.get("katriel.txt");
+        byte[] bytes=Files.readAllBytes(path);
+        for(byte b:bytes){
+            System.out.println((char)b);
+        }
     }
-    public void name() {
-        
+    public void escribir() throws IOException {
+        Path path=Paths.get("katriel.txt");
+        String texto="Suscribanse";
+        Files.write(path, texto.getBytes());
     }
 
     public static void main(String args[]) throws IOException {
         AppNIO app=new AppNIO();
-        app.operacionesFile("eliminar");
+        //app.operacionesFile("eliminar");
+        app.leer();
+        app.escribir();
+        app.leer();
     }
 }

@@ -2,10 +2,10 @@ package osti.katriel.lambda;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
+//import java.util.Comparator;
 import java.util.List;
 
-//ENFOQUE IMPERATIVO
+//ENFOQUE DECLARATIVO
 public class LambdaApp {
 
 
@@ -19,6 +19,8 @@ public class LambdaApp {
         lista.add("B");
         lista.add("A");
 
+        //JDK<1.7
+/*
         Collections.sort(lista,new Comparator<String>(){    //CLASE ANONIMA
 
             @Override
@@ -28,7 +30,11 @@ public class LambdaApp {
             }
             
         });
+*/
 
+         //JDK>1.8
+        Collections.sort(lista,(String o1, String o2) -> o1.compareToIgnoreCase(o2));   //LAMBDA
+        
         for (String elemento : lista) {
             System.out.println(elemento);
         }

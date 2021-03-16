@@ -10,13 +10,9 @@ public class HilosApp {
     public static void main(String args[]) throws InterruptedException, ExecutionException {
 
         ExecutorService executor=Executors.newFixedThreadPool(2);
-        Future<String> task1=executor.submit(new CHilo());
-        Future<?> task2=executor.submit(new RHilo());
+        Future<String> task1=executor.submit(new CHilo(3000));
+        Future<String> task2=executor.submit(new CHilo(2000));
         
-        while (!task1.isDone() && !task2.isDone()) {
-            
-        }
-
         System.out.println(task1.get());
         System.out.println(task2.get());
     }

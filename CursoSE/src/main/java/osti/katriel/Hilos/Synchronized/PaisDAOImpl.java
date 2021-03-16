@@ -16,10 +16,12 @@ public class PaisDAOImpl {
     }
 
     //synchronized hace que los hilos usen solo una instancia
-    public static synchronized PaisDAOImpl getInstance() {
-        if(instancia==null){
-            instancia=new PaisDAOImpl();
-            System.out.println("Se ha creado una instancia!");
+    public static PaisDAOImpl getInstance() {
+        synchronized(App.class){
+            if(instancia==null){
+                instancia=new PaisDAOImpl();
+                System.out.println("Se ha creado una instancia!");
+            }
         }
         return instancia;
     }

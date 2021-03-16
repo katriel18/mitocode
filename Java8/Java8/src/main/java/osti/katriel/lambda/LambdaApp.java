@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-//Enfoque imperativo sin lambdas
+//ENFOQUE IMPERATIVO
 public class LambdaApp {
 
 
@@ -15,12 +15,16 @@ public class LambdaApp {
         lista.add("e");
         lista.add("b");
         lista.add("a");
+        lista.add("E");
+        lista.add("B");
+        lista.add("A");
 
-        Collections.sort(lista,new Comparator<String>(){    //Clase Anonima
+        Collections.sort(lista,new Comparator<String>(){    //CLASE ANONIMA
 
             @Override
             public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
+                //return o1.compareTo(o2);
+                return o1.compareToIgnoreCase(o2);//IGNORA LAS MAYUSCULAS
             }
             
         });

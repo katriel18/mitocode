@@ -8,11 +8,12 @@ public class HilosApp {
         //Hilo con Thread
         THilo h1=new THilo(1);
         h1.start();
+        h1.join();//Tiene que morir el hilo para que se ejecute otro
 
         //Hilo con Runneable //Recomendable menos Dependiente
         Thread h2=new Thread(new RHilo(2));
-        Thread.sleep(3000); //Duerme la ejecucion del hilo y el programa
         h2.start();
+        h2.join();
 
         //Hilo con Clase Anonima
         Runnable AHilo=new Runnable(){
@@ -23,11 +24,11 @@ public class HilosApp {
         };
         Thread h3=new Thread(AHilo);
         h3.start();
+        h3.join();
 
         //Hilo Principal
         System.out.println("Hilo Principal");
        
-
     }
 
 }

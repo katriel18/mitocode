@@ -44,6 +44,13 @@ public class App {
 
     }
 
+    public void usarSort(){
+        //1er forma
+        //lista.sort((x,y)->x.compareToIgnoreCase(y));
+        //2er forma
+        lista.sort(String::compareToIgnoreCase);
+    }
+
     public static void main(String args[]) {
 
         App a=new App();
@@ -51,7 +58,10 @@ public class App {
 
         //a.usarForEach();
 
-        a.usarRemoveIf();
+        //a.usarRemoveIf();
+        //a.usarForEach();
+        
+        a.usarSort();
         a.usarForEach();
 
     }

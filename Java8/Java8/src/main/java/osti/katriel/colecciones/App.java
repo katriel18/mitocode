@@ -1,6 +1,7 @@
 package osti.katriel.colecciones;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class App {
@@ -28,14 +29,31 @@ public class App {
 
     }
 
+    public void usarRemoveIf(){
+
+        //1er forma
+        Iterator<String> x=lista.iterator();
+        while(x.hasNext()){
+            if(x.next().equalsIgnoreCase("e")){
+                x.remove();
+            }
+        }
+
+        //2da forma
+        lista.removeIf((y)->y.equalsIgnoreCase("a"));
+
+    }
 
     public static void main(String args[]) {
 
         App a=new App();
         a.llenarLista();
 
+        //a.usarForEach();
+
+        a.usarRemoveIf();
         a.usarForEach();
-        
+
     }
 
 

@@ -6,6 +6,13 @@ import java.util.Comparator;
 //No pueden enviar parametros los metodos referenciados
 public class App {
 
+    public void operar(){
+        Operacion operacion=()->App.referenciarMetodoStatic();
+        operacion.saludar();
+
+        Operacion operacion2=App::referenciarMetodoStatic;
+        operacion2.saludar();
+    }
     public static void referenciarMetodoStatic(){
         System.out.println("Metodo referido Static");
     }
@@ -38,24 +45,23 @@ public class App {
 
     }
 
-
+    public void referenciarMetodoInstanciaObjetoParticular(){
+        System.out.println("Metodo referido de instancia de objeto");
+    }
 
     
-    public void operar(){
-        Operacion operacion=()->App.referenciarMetodoStatic();
-        operacion.saludar();
 
-        Operacion operacion2=App::referenciarMetodoStatic;
-        operacion2.saludar();
-    }
 
     public static void main(String args[]) {
        
         App a=new App();
-        
-        a.operar();
 
-        a.referenciarMetodoInstanciaObjeto();
+        //a.operar();
+
+        //a.referenciarMetodoInstanciaObjeto();
+
+        Operacion operacion=a::referenciarMetodoInstanciaObjetoParticular;
+        operacion.saludar();
 
     }
     

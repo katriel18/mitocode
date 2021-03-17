@@ -49,7 +49,27 @@ public class App {
         System.out.println("Metodo referido de instancia de objeto");
     }
 
-    
+    public void referenciarConstructor(){
+        //1er forma
+        IPersona per=new IPersona(){
+            @Override
+            public Persona crear(int id, String nombre) {
+                return new Persona(id, nombre);
+            }
+        };
+        Persona p=per.crear(1, "Len");
+        System.out.println(p.toString());
+
+        //2er forma
+        IPersona per2=(x,y)->new Persona(x, y);
+        Persona p2=per2.crear(2, "Jhon");
+        System.out.println(p2.toString());
+
+        //3er forma
+        IPersona per3=Persona::new;
+        Persona p3=per3.crear(3, "luis");
+        System.out.println(p3.toString());
+    }
 
 
     public static void main(String args[]) {
@@ -60,8 +80,10 @@ public class App {
 
         //a.referenciarMetodoInstanciaObjeto();
 
-        Operacion operacion=a::referenciarMetodoInstanciaObjetoParticular;
-        operacion.saludar();
+        //Operacion operacion=a::referenciarMetodoInstanciaObjetoParticular;
+        //operacion.saludar();
+
+        a.referenciarConstructor();
 
     }
     

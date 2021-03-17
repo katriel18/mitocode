@@ -6,7 +6,9 @@ public class App {
         System.out.println("Metodo referido Static");
     }
 
+    //No pueden enviar parametros los metodos referenciados
     public void operar(){
+
         
         Operacion operacion=()->App.referenciarMetodoStatic();
         operacion.saludar();
